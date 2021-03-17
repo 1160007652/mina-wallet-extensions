@@ -1,0 +1,59 @@
+{
+  "author": "muniz",
+  "description": "mina wallet",
+  "homepage_url": "https://github.com/1160007652",
+  "name": "mina-wallet-extension",
+  "short_name": "mina",
+  "manifest_version": 2,
+  "permissions": [
+    "storage",
+    "downloads",
+    "tabs"
+  ],
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "js/baidu.js"
+      ],
+      "matches": [
+        "https://www.baidu.com/*",
+        "http://www.baidu.com/*"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "js": [
+        "js/google.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "64": "images/icon-64.png",
+    "128": "images/icon-128.png"
+  },
+  "web_accessible_resources": [
+    "images/*.png"
+  ]
+}
