@@ -6,8 +6,3 @@
  * @ Description: 可注入页面的content-scripts.js 资源
  */
 console.log('百度资源 - 插件注入 - 支持热更新');
-
-let content_baidu = 1;
-content_baidu = content_baidu + 2133;
-
-console.log(content_baidu);

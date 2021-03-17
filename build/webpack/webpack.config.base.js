@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const WebpackBar = require('webpackbar');
-const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
+// const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ManifestPlugin = require('../plugin/webpack-extension-manifest-plugin.js');
 const { DefinePlugin } = require('webpack');
@@ -128,11 +128,12 @@ module.exports = {
       _utils: path.resolve(SRC_ROOT, './utils'),
       _assets: path.resolve(SRC_ROOT, './assets'),
     },
+    fallback: { constants: false, fs: false, child_process: false },
   },
   plugins: [
     new WebpackBar(),
     new FriendlyErrorsWebpackPlugin(),
-    new AntdDayjsWebpackPlugin(),
+    // new AntdDayjsWebpackPlugin(),
     new CopyWebpackPlugin({ patterns: [{ from: 'public/images/', to: 'images' }] }),
     new CopyWebpackPlugin({ patterns: [{ from: 'public/README.txt', to: './' }] }),
     new HtmlWebpackPlugin({

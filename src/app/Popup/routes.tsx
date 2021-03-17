@@ -11,12 +11,12 @@ const routeMap = [
     exact: true,
     dynamic: false,
   },
-  {
-    path: pageURL.other,
-    component: lazy(() => import(/* webpackChunkName: 'mobxstore' */ '../../pages/MobxStore')),
-    exact: true,
-    dynamic: true,
-  },
+  // {
+  //   path: pageURL.other,
+  //   component: lazy(() => import(/* webpackChunkName: 'mobxstore' */ '../../pages/MobxStore')),
+  //   exact: true,
+  //   dynamic: true,
+  // },
   {
     path: '*',
     component: () => <div>404</div>,
